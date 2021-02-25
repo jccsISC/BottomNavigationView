@@ -1,24 +1,393 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <FrameLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fillViewport="true"
         tools:context=".fragments.HomeFragment">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="30sp"
-            android:textAlignment="center"
-            android:text="@string/fragment_home" />
+            android:layout_height="wrap_content">
 
-    </FrameLayout>
+            <RelativeLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/shape_toolbar_register"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="-30dp"
+                    android:layout_marginLeft="-30dp"
+                    android:layout_marginTop="32dp"
+                    android:src="@drawable/ic_logo_encuentro_withe" />
+
+                <TextView
+                    style="@style/StyleTxtTitleRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageView"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/welcome_user"
+                    android:textColor="@color/white" />
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true"
+                    android:layout_gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/padding_10"
+                        android:weightSum="1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:orientation="vertical"
+                            tools:background="@color/colorGreenDone">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cardEventLive"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_card_110"
+                                android:layout_margin="@dimen/margin_12"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackgroundBorderless"
+                                app:cardCornerRadius="10dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imgIconLive"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_margin="@dimen/margin_top_20"
+                                        android:src="@drawable/ic_live" />
+
+                                    <TextView
+                                        android:id="@+id/txtLive"
+                                        style="@style/StyleTxtTitleRegister"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/margin_top_20"
+                                        android:text="@string/eventos"
+                                        android:textColor="@color/blueToolbar"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cardFormation"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_card_110"
+                                android:layout_margin="@dimen/margin_12"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackgroundBorderless"
+                                app:cardCornerRadius="10dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imgIconFormacion"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_margin="@dimen/margin_top_20"
+                                        android:src="@drawable/ic_bible_home" />
+
+                                    <TextView
+                                        android:id="@+id/txtTitleFormacion"
+                                        style="@style/StyleTxtTitleRegister"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/margin_top_20"
+                                        android:text="@string/formacion"
+                                        android:textColor="@color/blueToolbar"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cardMyChurch"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_card_110"
+                                android:layout_margin="@dimen/margin_12"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackgroundBorderless"
+                                app:cardCornerRadius="10dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imgIconMiIglesia"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_margin="@dimen/margin_top_20"
+                                        android:src="@drawable/ic_church_home" />
+
+                                    <TextView
+                                        android:id="@+id/txtTitleMiIglesia"
+                                        style="@style/StyleTxtTitleRegister"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/margin_top_20"
+                                        android:text="@string/mi_iglesia"
+                                        android:textColor="@color/blueToolbar"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cardServices"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_card_110"
+                                android:layout_margin="@dimen/margin_12"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackgroundBorderless"
+                                app:cardCornerRadius="10dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imgIconServicios"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_margin="@dimen/margin_top_20"
+                                        android:src="@drawable/ic_services_home" />
+
+                                    <TextView
+                                        android:id="@+id/txtTitleServicios"
+                                        style="@style/StyleTxtTitleRegister"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/margin_top_20"
+                                        android:text="@string/servicios"
+                                        android:textColor="@color/blueToolbar"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:orientation="vertical"
+                            tools:background="@color/blueColorBtn">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cardRedSocial"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_card_110"
+                                android:layout_margin="@dimen/margin_12"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackgroundBorderless"
+                                app:cardCornerRadius="10dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imgIconRedSocial"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_margin="@dimen/margin_top_20"
+                                        android:src="@drawable/ic_red_social_home" />
+
+                                    <TextView
+                                        android:id="@+id/txtTitleRedSocial"
+                                        style="@style/StyleTxtTitleRegister"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/margin_top_20"
+                                        android:text="@string/red_social"
+                                        android:textColor="@color/blueToolbar"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cardMision"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_card_110"
+                                android:layout_margin="@dimen/margin_12"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackgroundBorderless"
+                                app:cardCornerRadius="10dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imgIconMision"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_margin="@dimen/margin_top_20"
+                                        android:src="@drawable/ic_mision_home" />
+
+                                    <TextView
+                                        android:id="@+id/txtTitleMision"
+                                        style="@style/StyleTxtTitleRegister"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/margin_top_20"
+                                        android:text="@string/mision"
+                                        android:textColor="@color/blueToolbar"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cardOraciones"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_card_110"
+                                android:layout_margin="@dimen/margin_12"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackgroundBorderless"
+                                app:cardCornerRadius="10dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imgIconOracion"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_margin="@dimen/margin_top_20"
+                                        android:src="@drawable/ic_hands_home" />
+
+                                    <TextView
+                                        android:id="@+id/txtTitleOracion"
+                                        style="@style/StyleTxtTitleRegister"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/margin_top_20"
+                                        android:text="@string/oraciones"
+                                        android:textColor="@color/blueToolbar"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cardLibrary"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_card_110"
+                                android:layout_margin="@dimen/margin_12"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackgroundBorderless"
+                                app:cardCornerRadius="10dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imgIconBiblioteca"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_margin="@dimen/margin_top_20"
+                                        android:layout_marginStart="@dimen/margin_top_20"
+                                        android:src="@drawable/ic_biblioteca_home" />
+
+                                    <TextView
+                                        android:id="@+id/txtTitleBiblioteca"
+                                        style="@style/StyleTxtTitleRegister"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/margin_top_20"
+                                        android:text="@string/biblioteca"
+                                        android:textColor="@color/blueToolbar"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <Button
+                    android:id="@+id/btnCrearCuenta"
+                    style="@style/StyleBtnDonar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_heart"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:paddingVertical="8dp"
+                    android:layout_gravity="bottom|end"
+                    android:text="@string/done" />
+
+            </FrameLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

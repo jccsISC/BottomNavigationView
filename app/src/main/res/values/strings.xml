@@ -8,4 +8,14 @@
     <string name="fragment_ayuda">Fragment Ayuda</string>
     <string name="fragment_home">Fragment Home</string>
     <string name="fragment_perfil">Fragment Perfil</string>
+    <string name="welcome_user">Bienvenido, Juan Carlos</string>
+    <string name="biblioteca">Biblioteca Virtual</string>
+    <string name="oraciones">Oraciones</string>
+    <string name="mision">Misión, Visión y \n valores</string>
+    <string name="red_social">Red social</string>
+    <string name="servicios">Servicios</string>
+    <string name="mi_iglesia">Mi iglesia</string>
+    <string name="formacion">Formación</string>
+    <string name="eventos">Eventos en vivo</string>
+    <string name="done">Donar</string>
 </resources>
