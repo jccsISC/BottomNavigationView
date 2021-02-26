@@ -1,5 +1,6 @@
 package com.example.mybottomnavigation
 
+import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
             val navController = findNavController(R.id.contentFragmentView)
 
             bottomNavigation.setupWithNavController(navController)
+
         }
     }
 }

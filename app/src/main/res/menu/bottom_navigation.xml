@@ -9,6 +9,6 @@
         android:title="@string/help"/>
 
     <item android:id="@+id/perfilFragment"
-        android:icon="@drawable/ic_user_home"
+        android:icon="@drawable/ic_user_home_p"
         android:title="@string/perfil"/>
 </menu>
